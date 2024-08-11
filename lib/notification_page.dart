@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'Controllers/notifcation_controller.dart';
 import 'notification_card.dart';
 
 class NotificationPage extends StatelessWidget {
@@ -7,32 +9,8 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final notifications = [
-      {
-        'title': "Points and Awards",
-        'description': "55 points were credited to you as manager recognition.",
-        'additionalInfo': "Today 10:30 AM 20 Dec. 2023",
-        'image': 'assets/images/award.png',
-      },
-      {
-        'title': "Check Out the Poll Outcome",
-        'description': "The results of the last poll have appeared, you can take a look!",
-        'additionalInfo': "Yesterday 14:00 PM 19 Dec. 2023",
-        'image': 'assets/images/tick-circle.png',
-      },
-      {
-        'title': "Performance Review Reminder",
-        'description': "This is a reminder that your performance review is scheduled for 19 Dec. 2023.",
-        'additionalInfo': "Yesterday 11:00 AM 19 Dec. 2023",
-        'image': 'assets/images/task.png',
-      },
-      {
-        'title': "New UX/UI Design Training Available!",
-        'description': "Great news! Improve your UX/UI skills with our latest training.",
-        'additionalInfo': "Monday 11:30 AM 17 Dec. 2023",
-        'image': 'assets/images/award.png',
-      },
-    ];
+    final notificationController = Provider.of<NotificationController>(context);
+    final notifications = notificationController.notifications;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -92,10 +70,10 @@ class NotificationPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final notification = notifications[index];
                   return NotificationCard(
-                    title: notification['title']!,
-                    description: notification['description']!,
-                    additionalInfo: notification['additionalInfo']!,
-                    image: Image.asset(notification['image']!),
+                    title: notification.title,
+                    description: notification.description,
+                    additionalInfo: notification.additionalInfo,
+                    image: Image.asset(notification.image),
                     borderColor: theme.colorScheme.primary,
                   );
                 },
