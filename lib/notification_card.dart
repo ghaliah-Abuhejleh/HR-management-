@@ -4,7 +4,7 @@ class NotificationCard extends StatelessWidget {
   final String title;
   final String description;
   final String additionalInfo;
-  final Image image; // Keeping Image type
+  final Image image;
   final Color borderColor;
 
   const NotificationCard({

@@ -54,14 +54,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/profile.png
-    - images/award.png
-    - images/task.png
-    - images/tick-circle.png
-    - images/icons/home.png
-    - images/icons/notification.png
-    - images/icons/task-square.png
-    - images/icons/percentage-square.png
+    - assets/images/profile.png
+    - assets/images/award.png
+    - assets/images/task.png
+    - assets/images/tick-circle.png
+    - assets/icons/home.png
+    - assets/icons/notification.png
+    - assets/icons/task-square.png
+    - assets/icons/percentage-square.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
