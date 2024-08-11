@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'notification_card.dart'; // Ensure you have this file
+import 'notification_card.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -64,7 +64,7 @@ class NotificationPage extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "${notifications.length}", // Update to dynamic count
+                          "${notifications.length}",
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: Colors.white,
                             fontSize: 12,
@@ -103,7 +103,6 @@ class NotificationPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Clear Notification action
               },
               child: Text(
                 "Clear Notification",
